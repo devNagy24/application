@@ -1,0 +1,12 @@
+{
+  "name": "devonnag/328/application",
+  "authors": [
+    {
+      "name": "Devon Nagy",
+      "email": "nagy.devon@student.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
