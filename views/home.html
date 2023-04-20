@@ -13,39 +13,6 @@
     <link rel="stylesheet" href="styles/styled.css" />
     <title>Software Developer Internship</title>
 
-
-
-<!--    &lt;!&ndash; Custom CSS (optional) &ndash;&gt;-->
-<!--    <style>-->
-<!--         Add your custom styles here-->
-<!--        .jumbotron {-->
-<!--            /*background-image: url("devNagyCodingBG.jpg");*/-->
-<!--            background-size: cover;-->
-<!--            background-position: center;-->
-<!--            min-height: 300px;-->
-<!--            /*background-color: aqua;*/-->
-<!--        }-->
-
-<!--        .jumbotron h1 {-->
-<!--            color: whitesmoke;-->
-<!--        }-->
-
-<!--        .jumbotron p {-->
-<!--            color:whitesmoke;-->
-<!--        }-->
-
-<!--        .jumbotron:before {-->
-<!--            content: "";-->
-<!--            position: absolute;-->
-<!--            top: 0;-->
-<!--            left: 0;-->
-<!--            width: 100%;-->
-<!--            height: 100%;-->
-<!--            background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));-->
-<!--            z-index: 1;-->
-<!--        }-->
-<!--    </style>-->
-
     <style>
         .section-divider {
             border-bottom: 2px solid rgba(0, 0, 0, 0.2);
@@ -54,40 +21,48 @@
         }
 
     </style>
-
+    
 </head>
 <body>
-<!--<nav class="navbar fixed-top bg-body-tertiary">-->
+
+<!--  Nav section -->
 <div class="container">
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-<!--        <div class="col-md-3 mb-2 mb-md-0">-->
-<!--            <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">-->
-<!--                <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>-->
-<!--            </a>-->
-<!--        </div>-->
-
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 fixed top">
-            <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-            <li><a href="#" class="nav-link px-2">Testimonials</a></li>
-            <li><a href="#" class="nav-link px-2">Qualifications</a></li>
-            <li><a href="#" class="nav-link px-2">FAQs</a></li>
-            <li><a href="#" class="nav-link px-2">About</a></li>
-        </ul>
-
-        <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-primary">Apply Now!</button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 mb-4 border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><strong>jobHunt</strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quals">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="d-flex ms-auto">
+                    <button type="button" class="btn btn-primary">Apply Now!</button>
+                </div>
+            </div>
         </div>
-    </header>
+    </nav>
 </div>
-<!--</nav>-->
 
 <!-- Hero -->
 <div class="jumbotron jumbotron-fluid">
     <div class="container text-center">
         <div class="background-overlay">
             <h1 class="display-4"><strong>Software Developer Internship</strong></h1>
-            <p class="lead location-duration"><i class="fa-solid fa-map-location-dot fa-sm"></i><strong> Location: Seattle, WA </strong></p>
-            <p class="lead location-duration"><i class="fa-solid fa-clock fa-sm"></i><strong> Duration: 12 Weeks </strong></p>
+            <p class="lead location-duration"><i class="fa-solid fa-map-location-dot fa-sm"></i><strong> Seattle, WA </strong></p>
+            <p class="lead location-duration"><i class="fa-solid fa-clock fa-sm"></i><strong> 12 Weeks (Paid) </strong></p>
         </div>
     </div>
     <img src='images/devNagyCodingBG.jpg' alt="Background image" class="background-image">
@@ -105,17 +80,6 @@
     </p>
 </section>
 </div>
-<!-- Responsibilities Section -->
-<!--<section class="container my-5" id="duties" >-->
-<!--    <h2 class="text-center mb-4">Responsibilities</h2>-->
-<!--    <ul>-->
-<!--        <li>Assist with the development and maintenance of software applications</li>-->
-<!--        <li>Collaborate with team members to design, develop, and implement new features and functionality</li>-->
-<!--        <li>Participate in code reviews and contribute to the improvement of code quality</li>-->
-<!--        <li>Learn and adapt to new technologies and tools</li>-->
-<!--        <li>Communicate effectively with team members and project stakeholders</li>-->
-<!--    </ul>-->
-<!--</section>-->
 
 <div class="section-divider">
 <section class="container my-5">
@@ -208,6 +172,11 @@
     <div class="row">
         <div class="col">
             <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <p>"I had an amazing experience as an intern at this company. I learned so much, and the team was incredibly supportive and helpful."</p>
@@ -221,11 +190,11 @@
                         <small>- John Smith, Former Intern</small>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#testimonialCarousel" type="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#testimonialCarousel" type="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
@@ -233,6 +202,9 @@
         </div>
     </div>
 </section>
+</div>
+<div class="d-flex justify-content-center mb-4">
+    <button type="button" class="btn btn-primary">Apply Now!</button>
 </div>
 
 <!-- Footer -->
@@ -255,17 +227,17 @@
             <div class="col-md-3">
                 <h5>Navigation</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-white"><i class="fa-solid fa-file-code" style="color: #ffffff;"></i> Home</a></li>
-                    <li><a href="#" class="text-white"><i class="fa-solid fa-file-lines" style="color: #ffffff;"></i> Job Description</a></li>
-                    <li><a href="#" class="text-white"><i class="fa-solid fa-user-secret" style="color: #ffffff;"></i> Responsibilities</a></li>
+                    <li><a href="#" class="text-white"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="#" class="text-white"><i class="fa-solid fa-file-lines"></i> Job Info</a></li>
+                    <li><a href="#" class="text-white"><i class="fa-solid fa-user-secret"></i> Duties</a></li>
                 </ul>
             </div>
             <div class="col-md-3">
                 <h5>Company Information</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-white"><i class="fa-solid fa-info-circle" style="color: #ffffff;"></i> About Us</a></li>
-                    <li><a href="#" class="text-white"><i class="fa-solid fa-users" style="color: #ffffff;"></i> Our Team</a></li>
-                    <li><a href="#" class="text-white"><i class="fa-solid fa-envelope" style="color: #ffffff;"></i> Contact Us</a></li>
+                    <li><a href="#" class="text-white"><i class="fa-solid fa-info-circle"></i>  About Us</a></li>
+                    <li><a href="#" class="text-white"><i class="fa-solid fa-users"></i> Our Team</a></li>
+                    <li><a href="#" class="text-white"><i class="fa-solid fa-envelope"></i>  Contact Us</a></li>
                 </ul>
             </div>
         </div>
