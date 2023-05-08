@@ -10,10 +10,15 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
+        html, body {
+            height: 100%;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8f9fa;
         }
+
 
         .container {
             max-width: 100%;
@@ -77,11 +82,25 @@
             margin-bottom: 1rem;
         }
 
+        #submit-message {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 3px;
+            display: none;
+        }
+
+
 
 
     </style>
 </head>
-<body>
+<body data-name="<?= $f3->get('SESSION.name') ?>" data-email="<?= $f3->get('SESSION.email') ?>" data-phone-number="<?= $f3->get('SESSION.phoneNumber') ?>">
+
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 mb-4 border-bottom">
         <div class="container-fluid">
@@ -119,9 +138,10 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Subscribe to our mailing list!</h5>
+                            <div id="submit-message"></div>
                             <form action="#" method="post" class="form-horizontal">
                                 <div class="form-group">
-                                    <label class="form-label">First Name</label>
+                                    <label class="form-label">Email</label>
                                     <input type="email" class="form-control" id="mailingList" placeholder="name@example.com" name="mailingListEmail">
                                 </div>
                                 <div class="form-check">
@@ -138,11 +158,24 @@
         </div>
     </div>
     <div class="d-flex justify-content-center mt-3 px-4">
-        <a href="home">
-            <button type="button" class="btn btn-outline-primary" id="addExperience">Submit</button>
-        </a>
+            <button type="submitadaf" class="btn btn-outline-primary" id="submit-button">Submit</button>
     </div>
 </section>
+<script>
+    document.querySelector("#submit-button").addEventListener("click", function(event) {
+        const submitMessage = document.querySelector("#submit-message");
+        submitMessage.style.display = "block";
+        submitMessage.textContent = "Thanks for the interest in working for us!";
+
+        // Clear the form inputs
+        document.querySelector("form").reset();
+
+        // Hide the message after 3 seconds
+        setTimeout(() => {
+            submitMessage.style.display = "none";
+        }, 8000);
+    });
+</script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
