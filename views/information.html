@@ -10,7 +10,100 @@
   <link rel="stylesheet" href="formStyles.css">
 
   <style>
- 
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      max-width: 100%;
+      padding: 0 15px;
+    }
+
+    .card-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .jobhunt-logo {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      color: #187bcd; /* Adjust this color for the desired shade of blue */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-brandt {
+      color: black;
+      text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+      font-size: 2.0em;
+      font-weight: 700;
+      text-transform: full-size-kana;
+      letter-spacing: 1px;
+    }
+
+    .card-title {
+      color: black;
+      text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+      font-size: 2.0em;
+      font-weight: 700;
+      text-transform: full-size-kana;
+      letter-spacing: 1px;
+    }
+    .long-button {
+      width: 150px;
+    }
+
+
+
+    .card {
+      width: 80vw;
+      max-width: 1200px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .card-title {
+      font-weight: bold;
+      font-size: 1.5em;
+      color: #007BFF;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-note-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .form-horizontal {
+      width: 55%;
+    }
+
+    .form-note {
+      width: 40%;
+      background-color: #f1f1f1;
+      padding: 1rem;
+      border-radius: 5px;
+    }
+
+    .form-note h6 {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+
   </style>
 </head>
 <body>
@@ -51,7 +144,8 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Personal Information</h5>
-              <form action="#" method="post" class="form-horizontal">
+              <div class="form-note-container">
+                <form action="#" method="post" class="form-horizontal">
                 <div class="form-group">
                   <label class="form-label">First Name</label>
                   <input type="text" class="form-control" id="firstName" name="firstName">
@@ -68,7 +162,83 @@
                   <label class="form-label">Email</label>
                   <input type="text" class="form-control" id="email" name="email">
                 </div>
+                <div class="form-group">
+                  <label for="state">State:</label>
+                  <select class="form-control" id="state" name="state">
+                    <option value="">Select a state</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                  </select>
+                </div>
+
               </form>
+                <div class="form-note">
+                  <h6>Note:</h6>
+                  All information entered is protected by our privacy policy.
+                  Profile information can only be viewed by others with permission.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center mt-3 px-4">
+    <a href="experience">
+      <button type="button" class="btn btn-primary" id="addExperience">Next</button>
+    </a>
+  </div>
+</section>
             </div>
           </div>
         </div>
