@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experience</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap">
+
   <link rel="stylesheet" href="styles.css">
 
   <style>
@@ -23,6 +25,24 @@
       justify-content: center;
     }
 
+    .jobhunt-logo {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      color: #187bcd; /* Adjust this color for the desired shade of blue */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-brandt {
+      color: black;
+      text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+      font-size: 1.5em;
+      font-weight: 700;
+      text-transform: full-size-kana;
+      letter-spacing: 1px;
+    }
+
+
     .card {
       width: 80vw;
       max-width: 1200px;
@@ -40,6 +60,11 @@
       color: #007BFF;
     }
 
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+
 
   </style>
 </head>
@@ -47,14 +72,14 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 mb-4 border-bottom">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><strong>jobHunt</strong></a>
+      <a class="navbar-brandt jobhunt-logo" href="#"><strong>jobHunt</strong></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="home">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#testimonials">Testimonials</a>
@@ -69,6 +94,8 @@
       </div>
     </div>
   </nav>
+
+
 </div>
 
 
@@ -76,69 +103,106 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 mx-auto">
-        <div class="card-wrapper">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Experience</h5>
-              <form action="#" method="post" class="form-horizontal">
-                <div class="form-group">
-                  <label for="company">Company Name</label>
-                  <input type="text" class="form-control" id="company" name="company">
-                </div>
-                <div class="form-group">
-                  <label for="position">Position</label>
-                  <input type="text" class="form-control" id="position" name="position">
-                </div>
-                <div class="form-group">
-                  <label for="startDate">Start Date</label>
-                  <input type="date" class="form-control" id="startDate" name="startDate">
-                </div>
-                <div class="form-group">
-                  <label for="endDate">End Date</label>
-                  <input type="date" class="form-control" id="endDate" name="endDate">
-                </div>
-                <div class="form-group">
-                  <label for="description">Description</label>
-                  <textarea class="form-control" id="description" name="description" rows="5"></textarea>
-                </div>
-                <button type="submit" class="btn btn-info">Save</button>
-              </form>
-
-            </div>
+        <form action="index.php" method="post" class="form-horizontal">
+          <div class="card-wrapper">
+            <!-- The cards will be added here -->
           </div>
-        </div>
+          <div class="d-flex justify-content-center mt-3">
+            <button type="button" class="btn btn-outline-primary" id="addExperience">Add Experience</button>
+          </div>
+          <div class="d-flex justify-content-end mt-4">
+            <button type="submit" class="btn btn-primary">Next</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-  <div class="d-flex justify-content-center mt-3">
-    <button type="button" class="btn btn-outline-primary" id="addExperience">Add Experience</button>
-  </div>
-  <div class="d-flex justify-content-end mt-4">
-    <a href="mailingList">
-    <button type="submit" class="btn btn-primary">Next</button>
-    </a>
-  </div>
 </section>
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 <script>
+  function createFormGroup() {
+    const formGroup = document.createElement('div');
+    formGroup.setAttribute('class', 'form-group');
+    return formGroup;
+  }
+
+  function createExperienceCard(index) {
+    const card = document.createElement('div');
+    card.setAttribute('class', 'card mt-3');
+    const cardBody = document.createElement('div');
+    cardBody.setAttribute('class', 'card-body');
+    card.appendChild(cardBody);
+
+    const cardTitle = document.createElement('h5');
+    cardTitle.setAttribute('class', 'card-title');
+    cardTitle.textContent = index === 0 ? 'Experience' : `Experience ${index + 1}`;
+    cardBody.appendChild(cardTitle);
+
+
+    const companyNameGroup = createFormGroup();
+    const companyName = document.createElement('input');
+    companyName.setAttribute('type', 'text');
+    companyName.setAttribute('class', 'form-control');
+    companyName.setAttribute('id', `company${index}`);
+    companyName.setAttribute('name', `company${index}`);
+    companyName.setAttribute('placeholder', 'Company Name');
+    companyNameGroup.appendChild(companyName);
+    cardBody.appendChild(companyNameGroup);
+
+    const positionGroup = createFormGroup();
+    const position = document.createElement('input');
+    position.setAttribute('type', 'text');
+    position.setAttribute('class', 'form-control');
+    position.setAttribute('id', `position${index}`);
+    position.setAttribute('name', `position${index}`);
+    position.setAttribute('placeholder', 'Position');
+    positionGroup.appendChild(position);
+    cardBody.appendChild(positionGroup);
+
+    const startDateGroup = createFormGroup();
+    const startDate = document.createElement('input');
+    startDate.setAttribute('type', 'date');
+    startDate.setAttribute('class', 'form-control');
+    startDate.setAttribute('id', `startDate${index}`);
+    startDate.setAttribute('name', `startDate${index}`);
+    startDateGroup.appendChild(startDate);
+    cardBody.appendChild(startDateGroup);
+
+    const endDateGroup = createFormGroup();
+    const endDate = document.createElement('input');
+    endDate.setAttribute('type', 'date');
+    endDate.setAttribute('class', 'form-control');
+    endDate.setAttribute('id', `endDate${index}`);
+    endDate.setAttribute('name', `endDate${index}`);
+    endDateGroup.appendChild(endDate);
+    cardBody.appendChild(endDateGroup);
+
+    const descriptionGroup = createFormGroup();
+    const description = document.createElement('textarea');
+    description.setAttribute('class', 'form-control');
+    description.setAttribute('id', `description${index}`);
+    description.setAttribute('name', `description${index}`);
+    description.setAttribute('rows', '5');
+    description.setAttribute('placeholder', 'Description');
+    descriptionGroup.appendChild(description);
+    cardBody.appendChild(descriptionGroup);
+
+    return card;
+  }
+
+
+  let cardIndex = 0;
   document.getElementById('addExperience').addEventListener('click', function() {
-    const cardWrapper = document.querySelector('.card-wrapper');
-    const newCard = document.querySelector('.card').cloneNode(true);
-    const inputs = newCard.querySelectorAll('input, textarea');
-
-    inputs.forEach(input => {
-      input.value = '';
-    });
-
-    cardWrapper.appendChild(newCard);
+    const newCard = createExperienceCard(cardIndex);
+    document.querySelector('.card-wrapper').appendChild(newCard);
+    cardIndex++;
   });
+
+  // Automatically add the first experience card when the page loads
+  const firstCard = createExperienceCard(cardIndex);
+  document.querySelector('.card-wrapper').appendChild(firstCard);
+  cardIndex++;
 </script>
+
 
 
 
