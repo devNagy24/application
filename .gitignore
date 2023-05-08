@@ -8,3 +8,9 @@ vendor/
 composer.lock
 
 tmp/
+
+.htaccess
+
+# temp files
+styles/formViews.css
+views/successView.html
