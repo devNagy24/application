@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="formStyles.css">
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 100%;
+            padding: 0 15px;
+        }
+
+        .jobhunt-logo {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 24px;
+            color: #187bcd; /* Adjust this color for the desired shade of blue */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar-brandt {
+            color: black;
+            text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+            font-size: 2.0em;
+            font-weight: 700;
+            text-transform: full-size-kana;
+            letter-spacing: 1px;
+        }
+
+
+        .card {
+            width: 80vw;
+            max-width: 1200px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+
+        .card {
+            width: 80vw;
+            max-width: 1200px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 mb-4 border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brandt jobhunt-logo" href="./"><strong>jobHunt</strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quals">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <div class="card mx-auto" style="width: auto;">
+            <div class="card-header">
+                <h1 style="color: #007BFF;">Summary</h1>
+            </div>
+            <div class="card-body">
+                <p><b>First Name:</b> {{ @SESSION.firstName }}</p>
+                <p><b>Last Name:</b> {{ @SESSION.lastName }}</p>
+                <p><b>Email:</b> {{ @SESSION.email }}</p>
+                <p><b>Phone:</b> {{ @SESSION.phone }}</p>
+                <p><b>State:</b> {{ @SESSION.state }}</p>
+
+                <h2 style="color: #007BFF;">Experience</h2>
+                <p><b>Years of Experience:</b> {{ @SESSION.yearsExperience }}</p>
+
+                <p><b>Selected Development Skills:</b> {{ @SESSION.devSkills | raw }}</p>
+
+                <p><b>Selected Industries:</b> {{ @SESSION.industries | raw }}</p>
+
+                <h3 style="color: #007BFF;">Biography</h3>
+                    <p> {{ nl2br(@SESSION.description) }} </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
