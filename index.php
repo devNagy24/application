@@ -26,7 +26,7 @@ $f3->route('GET /', function() {
 });
 
 
-// Define a route for the Personal Information page (GET/POST request)
+// Define a route for the Information page
 $f3->route('GET|POST /information', function($f3) {
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $firstName = $_POST['firstName'];
@@ -34,7 +34,7 @@ $f3->route('GET|POST /information', function($f3) {
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $state = $_POST['state'];
-        
+
 
 
         // Validation checks
@@ -91,6 +91,14 @@ $f3->route('GET|POST /experience', function($f3) {
             $f3->set('errors["githubLink"]', "GitHub link is invalid");
         }
 
+        if (!validExperience($yearsExperience)) {
+            $f3->set('errors["yearsExperience"]', "Please select your years of experience");
+        }
+
+        if (!validRelocate($relocateStatus)) {
+            $f3->set('errors["relocateStatus"]', "Please select if you're willing to relocate or not");
+        }
+
 
         // If there are no errors
         if (empty($f3->get('errors'))) {
@@ -116,13 +124,6 @@ $f3->route('GET|POST /experience', function($f3) {
             }
             $f3->set('SESSION.experienceData', $experienceData);
 
-            if (!validExperience($yearsExperience)) {
-                $f3->set('errors["yearsExperience"]', "Please select your years of experience");
-            }
-
-            if (!validRelocate($relocateStatus)) {
-                $f3->set('errors["relocateStatus"]', "Please select if you're willing to relocate or not");
-            }
 
         }
         $f3->reroute('/mailingList');
@@ -141,8 +142,9 @@ $f3->route('GET|POST /mailingList', function($f3) {
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-        $yearsExperience = $_POST['yearsExperience'] ?? null;
-        $relocateStatus = $_POST['relocateStatus'] ?? null;
+           // Ensures these variables are properly defined
+//        $yearsExperience = $_POST['yearsExperience'] ?? null;
+//        $relocateStatus = $_POST['relocateStatus'] ?? null;
 
 
         // Get the data
