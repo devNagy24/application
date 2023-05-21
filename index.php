@@ -74,7 +74,6 @@ $f3->route('GET|POST /information', function($f3) {
 $f3->route('GET|POST /experience', function($f3) {
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $yearsExperience = $_POST['yearsExperience'] ?? null;
-        $skills = $_POST['skills'] ?? null;
         $desc = $_POST['description'] ?? null;
         $githubLink = $_POST['githubLink'] ?? null;
         $relocateStatus = $_POST['relocateStatus'] ?? null;
@@ -103,7 +102,6 @@ $f3->route('GET|POST /experience', function($f3) {
         // If there are no errors
         if (empty($f3->get('errors'))) {
             $f3->set('SESSION.yearsExperience', $yearsExperience);
-            $f3->set('SESSION.skills', $skills);
             $f3->set('SESSION.description', $desc);
             $f3->set('SESSION.githubLink', $githubLink);
             $f3->set('SESSION.relocateStatus', $relocateStatus);
@@ -123,10 +121,10 @@ $f3->route('GET|POST /experience', function($f3) {
                 $index++;
             }
             $f3->set('SESSION.experienceData', $experienceData);
-
+            $f3->reroute('/mailingList');
 
         }
-        $f3->reroute('/mailingList');
+
     }
 
 // Display a view page

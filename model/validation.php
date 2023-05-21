@@ -6,7 +6,11 @@ function validName($name) {
 
 // Validate description: we assume a valid description is non-empty
 function validDescription($description) {
-    return !empty(trim($description));
+    // trim whitespace from beginning and end of string
+    $trimmedDescription = trim($description);
+
+    // check if the trimmed string is not empty and not just whitespace
+    return !empty($trimmedDescription) && ctype_graph($trimmedDescription);
 }
 
 // valid GitHub URL starts with 'https://github.com/'
