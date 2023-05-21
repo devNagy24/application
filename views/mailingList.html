@@ -178,6 +178,9 @@
                                             <input class="form-check-input" type="checkbox" id="nodeCheck" name="devSkills[]" value="NodeJS">
                                             <i class="fa-brands fa-node" style="color: #1cb011;"></i> NodeJS
                                         </label>
+                                        <div class="text-danger">
+                                            {{ isset(@errors['devSkills']) ? @errors['devSkills'] : '' }}
+                                        </div>
                                     </div>
                                     </div>
                                 </div>
@@ -229,6 +232,9 @@
                                             <input class="form-check-input" type="checkbox" id="cyberCheck" name="industries[]" value="Cybersecurity">
                                             <i class="fa-solid fa-shield-halved" style="color: #3d73d1;"></i> Cybersecurity
                                         </label>
+                                        <div class="text-danger">
+                                            {{ isset(@errors['industries']) ? @errors['industries'] : '' }}
+                                        </div>
                                     </div>
                                 </div>
                                 </div>
