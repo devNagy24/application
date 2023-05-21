@@ -1,0 +1,63 @@
+<?php
+
+function validName($name) {
+    return ctype_alpha(str_replace(' ', '', $name));
+}
+
+// Validate description: we assume a valid description is non-empty
+function validDescription($description) {
+    return !empty(trim($description));
+}
+
+// valid GitHub URL starts with 'https://github.com/'
+function validGithub($url) {
+    return filter_var($url, FILTER_VALIDATE_URL);
+}
+
+function validExperience($experience) {
+    $validExperiences = ["0-2", "2-4", "4-6", "6+"];
+
+    // Check if the submitted experience value is in the list of valid experiences
+    return in_array($experience, $validExperiences);
+}
+
+function validPhone($phone) {
+    // valid phone number contains only numbers and has length of 10
+    return preg_match("/^[0-9]{10}$/", $phone);
+}
+
+function validEmail($email) {
+    return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
+
+
+function validRelocate($relocate) {
+    $validRelocateStatuses = ["yes", "no"];
+
+    // Check if the submitted relocate status is in the list of valid statuses
+    return in_array($relocate, $validRelocateStatuses);
+}
+
+function validSelectionsJobs($selectedSkills) {
+    // This checks each selected dev skill against a list of valid options
+    $validSkills = ["JavaScript", "HTML5", "CSS", "PHP", "Java", "Python", "React Native", "NodeJS"];
+    foreach ($selectedSkills as $skill) {
+        if (!in_array($skill, $validSkills)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function validSelectionsVerticals($selectedIndustries) {
+    // This checks each selected industry against a list of valid options
+    $validIndustries = ["SASS", "Industrial Tech", "Health Tech", "AG Tech", "HR Tech", "Cybersecurity"];
+    foreach ($selectedIndustries as $industry) {
+        if (!in_array($industry, $validIndustries)) {
+            return false;
+        }
+    }
+    return true;
+}
+
