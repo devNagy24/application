@@ -103,21 +103,29 @@
                 <h1 style="color: #007BFF;">Summary</h1>
             </div>
             <div class="card-body">
-                <p><b>First Name:</b> {{ @SESSION.firstName }}</p>
-                <p><b>Last Name:</b> {{ @SESSION.lastName }}</p>
-                <p><b>Email:</b> {{ @SESSION.email }}</p>
-                <p><b>Phone:</b> {{ @SESSION.phone }}</p>
-                <p><b>State:</b> {{ @SESSION.state }}</p>
+                <p><b>First Name:</b> {{ @firstName }}</p>
+                <p><b>Last Name:</b> {{ @lastName }}</p>
+                <p><b>Email:</b> {{ @email }}</p>
+                <p><b>Phone:</b> {{ @phone }}</p>
+                <p><b>State:</b> {{ @state }}</p>
 
                 <h2 style="color: #007BFF;">Experience</h2>
-                <p><b>Years of Experience:</b> {{ @SESSION.yearsExperience }}</p>
+                <p><b>Years of Experience:</b> {{ @yearsExperience }}</p>
 
-                <p><b>Selected Development Skills:</b> {{ @SESSION.devSkills | raw }}</p>
+                <b>Selected Development Skills:</b>
+                <ul>
+                    <repeat group="{{ @devSkills }}" value="{{ @skill }}">
+                        <li>{{ @skill }}</li>
+                    </repeat>
+                </ul>
 
-                <p><b>Selected Industries:</b> {{ @SESSION.industries | raw }}</p>
+                <b>Selected Industries:</b>
+                <ul>
+                    <repeat group="{{ @industries }}" value="{{ @industry }}">
+                        <li>{{ @industry }}</li>
+                    </repeat>
+                </ul>
 
-                <h3 style="color: #007BFF;">Biography</h3>
-                    <p> {{ nl2br(@SESSION.description) }} </p>
             </div>
         </div>
     </div>
